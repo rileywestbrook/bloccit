@@ -1,7 +1,7 @@
 require 'rails_helper'
 include RandomData
 
-RSpec.describe AdvertisementController, type: :controller do
+RSpec.describe AdvertisementsController, type: :controller do
   let (:my_ad) do
     Advertisement.create(
       id: 1,
@@ -17,9 +17,9 @@ RSpec.describe AdvertisementController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-    it "assigns [my_ad] to @advertisement" do
+    it "assigns [my_ad] to @advertisements" do
       get :index
-      expect(assigns(:advertisement)).to eq([my_ad])
+      expect(assigns(:advertisements)).to eq([my_ad])
     end
   end
 
