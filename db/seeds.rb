@@ -9,6 +9,17 @@ require 'random_data'
 end
 topics = Topic.all
 
+# Create Sponsored Posts
+30.times do
+  SponsoredPost.create!(
+    topic: topics.sample,
+    title: RandomData.random_sentence,
+    body: RandomData.random_paragraph,
+    price: RandomData.random_number
+  )
+end
+
+
 # Create posts
 50.times do
   Post.create!(
